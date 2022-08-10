@@ -6,6 +6,7 @@ import com.gbrsantos.gerenciadefuncionarios.repository.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.UUID;
 
@@ -31,6 +32,7 @@ public class FuncionarioService {
         return funcionarioRepository.save(funcionario);
     }
 
+    @Transactional
     public void deletarFuncionario(Long id){
         funcionarioRepository.deleteFuncionarioById(id);
     }
